@@ -8,7 +8,7 @@ import 'dart:math' as math;
 import 'event_page.dart';
 import 'utils.dart' as utils;
 
-class SchedulePage extends StatefulWidget {
+class  SchedulePage extends StatefulWidget {
   SchedulePage({@required this.title});
 
   final String title;
@@ -177,6 +177,7 @@ class MyBackLayerState extends State<MyBackLayer> with SingleTickerProviderState
       DateTime day = DateTime(date.year, date.month, date.day);
 
       if (eventsOnDays[day] == null) {
+        // ignore: deprecated_member_use
         eventsOnDays[day] = List<DocumentSnapshot>();
       }
       eventsOnDays[day].add(snapshot);

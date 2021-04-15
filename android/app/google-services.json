@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "785041021413",
+    "project_id": "curiousia-80ccf",
+    "storage_bucket": "curiousia-80ccf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785041021413:android:dee5e23ee3cb6e310a370c",
+        "android_client_info": {
+          "package_name": "com.example.curious_ia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785041021413-tiv3e1bfeq90s20i31pmi12j8tl9heu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDymsL_0O4fmUvsBIv97KnFt6ZBlCgf96Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785041021413-tiv3e1bfeq90s20i31pmi12j8tl9heu8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

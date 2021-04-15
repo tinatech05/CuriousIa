@@ -11,7 +11,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/physics.dart';
 
 import 'package:path_drawing/path_drawing.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'dart:ui';
 
