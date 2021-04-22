@@ -211,7 +211,7 @@ class BackDropState extends State<BackDrop> with SingleTickerProviderStateMixin 
       new PositionedTransition(
         rect: backRelativeRect,
         child: SafeArea(
-          child: NotificationListener<ScrollUpdateNotification>(
+          child:NotificationListener<ScrollUpdateNotification>(
             child: widget.backLayer,
             onNotification: (notification) {
               setState(() {
