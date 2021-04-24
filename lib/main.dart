@@ -110,7 +110,6 @@ class AppHomeState extends State<AppHome> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-
     _firebaseMessaging.configure(
       onMessage: (Map<String, dynamic> message) {
         print("onMessage: $message");
@@ -144,8 +143,6 @@ class AppHomeState extends State<AppHome> with TickerProviderStateMixin {
           color: Colors.tealAccent.shade400,
           body: new SchedulePage(title: 'schedule'),
           vsync: this),
-
-      
       new AppPage(
         icon: new Icon(Icons.info_outline),
         title: 'Info',

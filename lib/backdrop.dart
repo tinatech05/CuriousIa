@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'bloc/schedule_provider.dart';
 import 'schedule.dart';
 import 'dart:async';
-import 'package:rxdart/rxdart.dart';
 import 'bloc/scroll_bloc.dart';
 
 import 'package:flutter/foundation.dart';
@@ -217,7 +216,6 @@ class BackDropState extends State<BackDrop> with SingleTickerProviderStateMixin 
               setState(() {
                 t = (notification.metrics.pixels / notification.metrics.maxScrollExtent).clamp(0.00001, 1.0).abs();
               });
-
               return true;
             },
           ),
