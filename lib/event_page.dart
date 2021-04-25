@@ -157,7 +157,6 @@ class EventPageState extends State<EventPage> with SingleTickerProviderStateMixi
     }
 
     EventType type = EventType.fromTitle(widget.event['type']);
-
     return new Scaffold(
       body: Stack(fit: StackFit.expand, children: <Widget>[
         new Container(

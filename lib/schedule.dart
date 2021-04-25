@@ -579,9 +579,7 @@ class EventListTile extends StatelessWidget {
     final EventType type = EventType.fromTitle(event['type']);
     bool mini = event['priority'] < 2;
     DateTime date = (event['date_start'] as Timestamp).toDate();
-
     bool connectsToTop = previousEventInList != null;
-
     if (connectsToTop) {
       DateTime previousTime = (previousEventInList['date_start'] as Timestamp).toDate();
 
