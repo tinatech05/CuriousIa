@@ -5,7 +5,6 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
 import 'utils.dart';
 import 'schedule.dart';
-import 'map.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'dart:async';
 import 'package:intl/intl.dart';
@@ -124,19 +123,7 @@ class EventPageState extends State<EventPage> with SingleTickerProviderStateMixi
                       'id': 'mapbox.streets',
                     },
                   ),
-                  new MarkerLayerOptions(
-                    markers: [
-                      new Marker(
-                        width: 80.0,
-                        height: 80.0,
-                        anchor: AnchorPos.top,
-                        point: new LatLng(location.latitude, location.longitude),
-                        builder: (ctx) => new Container(
-                              child: new AnimatedMarker(widget.event, null),
-                            ),
-                      ),
-                    ],
-                  ),
+                 
                 ],
               ),
             ),

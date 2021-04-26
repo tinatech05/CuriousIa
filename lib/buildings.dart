@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'map.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
 import 'event_page.dart';
@@ -8,11 +7,10 @@ import 'utils.dart';
 
 class BuildingMapMarker extends StatefulWidget {
 
-  BuildingMapMarker({Key key, @required this.building, @required this.selectionController, @required this.tapDelegate, this.vsync}) : super(key: key);
+  BuildingMapMarker({Key key, @required this.building,  this.vsync}) : super(key: key);
 
   final DocumentSnapshot building;
-  final MarkerSelectionController selectionController;
-  final MarkerTapCallback tapDelegate;
+
   final TickerProvider vsync;
 
   bool selected = false;
@@ -34,26 +32,14 @@ class _BuildingMapMarkerState extends State<BuildingMapMarker> {
 
     controller = new AnimationController(vsync: widget.vsync, duration: const Duration(milliseconds: 300));
 
-    _buildingSelectionSub = widget.selectionController.eventSelectionOutputStream.listen((title) {
-      if (title == widget.building['name']) {
-        controller.forward();
-      } else {
-        controller.reverse();
-      }
-    });
+   
   }
 
   @override
   void didUpdateWidget(BuildingMapMarker oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    _buildingSelectionSub = widget.selectionController.eventSelectionOutputStream.listen((title) {
-      if (title == widget.building['name']) {
-        controller.forward();
-      } else {
-        controller.reverse();
-      }
-    });
+  
   }
 
   @override
@@ -93,13 +79,13 @@ class _BuildingMapMarkerState extends State<BuildingMapMarker> {
         ),
         animation: controller,
         building: widget.building,
-        selectionController: widget.selectionController);
+        );
   }
 }
 
 class BuildingMapMarkerGrowTransition extends AnimatedWidget {
   BuildingMapMarkerGrowTransition(
-      {@required this.child, @required this.animation, @required this.building, @required this.selectionController})
+      {@required this.child, @required this.animation, @required this.building, })
       : scaleAnimation =
             new Tween(begin: 1.0, end: 1.5).animate(new CurvedAnimation(parent: animation, curve: Curves.ease)),
         opacityAnimation = new Tween(begin: 0.0, end: 1.0)
@@ -113,8 +99,7 @@ class BuildingMapMarkerGrowTransition extends AnimatedWidget {
   final Animation<double> scaleAnimation;
   final Animation<double> opacityAnimation;
   final Animation<Offset> slideAnimation;
-  final MarkerSelectionController selectionController;
-
+  
   @override
   Widget build(BuildContext context) {
     List<Widget> children = [
@@ -171,13 +156,7 @@ class BuildingMapMarkerGrowTransition extends AnimatedWidget {
         GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () {
-            if (animation.status == AnimationStatus.dismissed) {
-              selectionController.markerSelectionInputSink.add(building['location']);
-              selectionController.eventSelectionInputSink.add(building['name']);
-            } else {
-              openMaps(context, building['location'], building['name']);
-
-            }
+           
           },
           child: Container(
             width: 50.0,

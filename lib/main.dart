@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'schedule.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'map.dart';
 import 'info.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'dart:async';
