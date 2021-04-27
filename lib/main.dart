@@ -1,5 +1,7 @@
+import 'package:curious_ia/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'login.dart';
 import 'schedule.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'info.dart';
@@ -60,7 +62,12 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new AppHome(),
+      home: LoginPage(),
+      routes: {
+        '/home': (BuildContext context)=> AppHome(),
+        '/signin': (BuildContext context)=> LoginPage(),
+        '/signup': (BuildContext context)=> SignupPage(),
+      },
     );
   }
 }
