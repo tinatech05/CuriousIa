@@ -17,6 +17,7 @@ class ScheduleProvider extends InheritedWidget {
   }
 
   static ScheduleBloc of(BuildContext context) =>
+      // ignore: unnecessary_cast
       (context.dependOnInheritedWidgetOfExactType<ScheduleProvider>() as ScheduleProvider)
           .scheduleBloc;
 }

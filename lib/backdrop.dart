@@ -846,8 +846,10 @@ class AnimatedBackground extends AnimatedWidget {
             end: Rect.fromLTWH(-c.maxWidth * 0.4, c.maxHeight * 0.6, c.maxWidth * 0.25, c.maxWidth * 0.25),
           ).lerp(t),
           child: Transform.scale(
+            // ignore: invalid_use_of_protected_member
             scale: Tween<double>(begin: 3.0, end: 1.0).lerp(t),
             child: Transform.rotate(
+              // ignore: invalid_use_of_protected_member
               angle: Tween<double>(begin: -math.pi / 4.0, end: 0.0).lerp(t),
               child: new CustomPaint(
                 painter: new PathPainter(squarePath, painter: squarePaint),
